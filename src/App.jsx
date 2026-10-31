@@ -44,7 +44,7 @@ function favoritesReducer(state, action) {
   }
 }
 
-function Gallery() {
+function Gallery() { 
   const { photos, loading, error } = useFetchPhotos()
   const [favorites, dispatchFavorites] = useReducer(
     favoritesReducer,
@@ -81,7 +81,7 @@ function Gallery() {
 
   return (
     <main className="min-h-screen bg-[linear-gradient(135deg,#BDE0FE_0%,#A2D2FF_52%,#FFC8DD_100%)] p-4 text-slate-800 sm:p-8">
-      <section className="mx-auto w-full max-w-[1200px] border border-white/60 bg-white/45 p-5 shadow-2xl shadow-slate-700/10 backdrop-blur-xl sm:p-8">
+      <section className="mx-auto w-full max-w-300 border border-white/60 bg-white/45 p-5 shadow-2xl shadow-slate-700/10 backdrop-blur-xl sm:p-8">
         <header className="mb-8 border-b border-slate-800/10 pb-6">
           <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
             Celebrare
@@ -133,12 +133,12 @@ function Gallery() {
 
         {loading && (
           <div
-            className="grid min-h-[220px] place-items-center text-center"
+            className="grid min-h-55 place-items-center text-center"
             aria-live="polite"
           >
             <div>
               <div
-                className="mx-auto h-[52px] w-[52px] animate-spin rounded-full border-4 border-[#A2D2FF]/50 border-t-[#527da5]"
+                className="mx-auto h-13 w-13 animate-spin rounded-full border-4 border-[#A2D2FF]/50 border-t-[#527da5]"
                 aria-hidden="true"
               />
               <p className="mt-4 text-sm text-slate-600">Loading photos...</p>
@@ -148,7 +148,7 @@ function Gallery() {
 
         {!loading && error && (
           <div
-            className="grid min-h-[220px] place-items-center border border-slate-700/10 bg-white/25 px-4 text-center text-slate-700"
+            className="grid min-h-55 place-items-center border border-slate-700/10 bg-white/25 px-4 text-center text-slate-700"
             aria-live="assertive"
           >
             <p>{error}</p>
